@@ -33,4 +33,12 @@ function create(ctx) {
   ctx.status = 201;
 }
 
-module.exports = { getAllPosts, getById, deleteById, create };
+
+function searchEndpoint(ctx) {
+    const text = ctx.request.params.text;
+    // postsModel.posts
+    ctx.body = postsModel.posts[text];
+  }
+
+
+module.exports = { getAllPosts, getById, deleteById, create, searchEndpoint };
